@@ -23,4 +23,51 @@ def tampilkan_papan_catur():
 
 menu()
 
-Tugas 9 selesai
+# ============================================================
+# FUNCTION 2: PENCATAT AKTIVITAS
+# ============================================================
+
+def pencatat_aktivitas():
+    print("\n" + "=" * 40)
+    print("      APLIKASI PENCATAT AKTIVITAS")
+    print("=" * 40)
+
+    daftar_aktivitas = []
+
+    try:
+        jumlah = int(input("\nBerapa banyak aktivitas yang ingin dimasukkan? "))
+
+        for i in range(jumlah):
+            print(f"\n--- Aktivitas ke-{i+1} ---")
+
+            nama_aktivitas = input("Nama aktivitas        : ")
+            waktu = input("Waktu pelaksanaan     : ")
+            lokasi = input("Lokasi                : ")
+            status = input("Status (selesai/belum): ")
+
+            aktivitas = {
+                "no": i + 1,
+                "aktivitas": nama_aktivitas,
+                "waktu": waktu,
+                "lokasi": lokasi,
+                "status": status
+            }
+
+            daftar_aktivitas.append(aktivitas)
+
+        print("\n" + "=" * 40)
+        print("       DAFTAR AKTIVITAS ANDA")
+        print("=" * 40)
+
+        for item in daftar_aktivitas:
+            print(f"\nNo         : {item['no']}")
+            print(f"Aktivitas  : {item['aktivitas']}")
+            print(f"Waktu      : {item['waktu']}")
+            print(f"Lokasi     : {item['lokasi']}")
+            print(f"Status     : {item['status']}")
+            print("-" * 40)
+
+        print(f"\n✅ Total aktivitas tercatat: {len(daftar_aktivitas)}")
+
+    except ValueError:
+        print("\n❌ Jumlah aktivitas harus berupa angka!")
