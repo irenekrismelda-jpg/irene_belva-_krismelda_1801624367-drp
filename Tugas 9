@@ -71,3 +71,39 @@ def pencatat_aktivitas():
 
     except ValueError:
         print("\n❌ Jumlah aktivitas harus berupa angka!")
+
+# ============================================================
+# MENU UTAMA
+# ============================================================
+
+def menu():
+    while True:
+        print("\n" + "=" * 40)
+        print("          MENU PROGRAM")
+        print("=" * 40)
+        print("1. Tampilkan Papan Catur")
+        print("2. Input Aktivitas Harian")
+        print("3. Keluar")
+        print("=" * 40)
+
+        pilihan = input("Pilih menu (1-3): ")
+
+        if pilihan == "1":
+            tampilkan_papan_catur()
+
+        elif pilihan == "2":
+            pencatat_aktivitas()
+
+        elif pilihan == "3":
+            print("\nTerima kasih telah menggunakan program.")
+            break
+
+        else:
+            print("\n❌ Pilihan tidak valid! Silakan pilih 1, 2, atau 3.")
+
+
+# ============================================================
+# PROGRAM UTAMA
+# ============================================================
+
+menu()
