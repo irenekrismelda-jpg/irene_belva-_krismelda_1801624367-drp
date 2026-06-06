@@ -1,0 +1,105 @@
+# ============================================================
+# FUNCTION 1: PAPAN CATUR
+# ============================================================
+
+def tampilkan_papan_catur():
+    print("\n" + "=" * 40)
+    print("         PAPAN CATUR 8x8")
+    print("=" * 40)
+
+    for baris in range(8):
+        for kolom in range(8):
+            if (baris + kolom) % 2 == 0:
+                print("⬛", end="")
+            else:
+                print("⬜", end="")
+        print()
+
+    print()
+
+
+# ============================================================
+# FUNCTION 2: PENCATAT AKTIVITAS
+# ============================================================
+
+def pencatat_aktivitas():
+    print("\n" + "=" * 40)
+    print("      APLIKASI PENCATAT AKTIVITAS")
+    print("=" * 40)
+
+    daftar_aktivitas = []
+
+    try:
+        jumlah = int(input("\nBerapa banyak aktivitas yang ingin dimasukkan? "))
+
+        for i in range(jumlah):
+            print(f"\n--- Aktivitas ke-{i+1} ---")
+
+            nama_aktivitas = input("Nama aktivitas        : ")
+            waktu = input("Waktu pelaksanaan     : ")
+            lokasi = input("Lokasi                : ")
+            status = input("Status (selesai/belum): ")
+
+            aktivitas = {
+                "no": i + 1,
+                "aktivitas": nama_aktivitas,
+                "waktu": waktu,
+                "lokasi": lokasi,
+                "status": status
+            }
+
+            daftar_aktivitas.append(aktivitas)
+
+        print("\n" + "=" * 40)
+        print("       DAFTAR AKTIVITAS ANDA")
+        print("=" * 40)
+
+        for item in daftar_aktivitas:
+            print(f"\nNo         : {item['no']}")
+            print(f"Aktivitas  : {item['aktivitas']}")
+            print(f"Waktu      : {item['waktu']}")
+            print(f"Lokasi     : {item['lokasi']}")
+            print(f"Status     : {item['status']}")
+            print("-" * 40)
+
+        print(f"\n✅ Total aktivitas tercatat: {len(daftar_aktivitas)}")
+
+    except ValueError:
+        print("\n❌ Jumlah aktivitas harus berupa angka!")
+
+
+# ============================================================
+# MENU UTAMA
+# ============================================================
+
+def menu():
+    while True:
+        print("\n" + "=" * 40)
+        print("          MENU PROGRAM")
+        print("=" * 40)
+        print("1. Tampilkan Papan Catur")
+        print("2. Input Aktivitas Harian")
+        print("3. Keluar")
+        print("=" * 40)
+
+        pilihan = input("Pilih menu (1-3): ")
+
+        if pilihan == "1":
+            tampilkan_papan_catur()
+
+        elif pilihan == "2":
+            pencatat_aktivitas()
+
+        elif pilihan == "3":
+            print("\nTerima kasih telah menggunakan program.")
+            break
+
+        else:
+            print("\n❌ Pilihan tidak valid! Silakan pilih 1, 2, atau 3.")
+
+
+# ============================================================
+# PROGRAM UTAMA
+# ============================================================
+
+menu()
