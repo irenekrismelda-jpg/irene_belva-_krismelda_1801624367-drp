@@ -265,7 +265,7 @@ def menu_psikolog():
 
 
 # =========================================================
-# MENU: JADWAL KONSELING
+# MENU: PEMILIHAN JADWAL KONSELING
 # =========================================================
 def menu_jadwal():
     while True:
