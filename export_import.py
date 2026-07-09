@@ -27,7 +27,7 @@ def get_connection():
 
 
 # ------------------------------------------------------------
-# EXPORT: database -> file JSON
+# EXPORT: Database -> File JSON
 # ------------------------------------------------------------
 def export_json():
     conn = get_connection()
@@ -53,7 +53,7 @@ def export_json():
 
 
 # ------------------------------------------------------------
-# IMPORT: file JSON -> database
+# IMPORT: File JSON -> Database
 # ------------------------------------------------------------
 def import_json():
     nama_file = input("Nama file JSON yang mau di-import: ").strip()
