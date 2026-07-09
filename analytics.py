@@ -199,7 +199,7 @@ def pertumbuhan_pengguna_per_bulan():
 
 
 # =========================================================
-# RINGKASAN GABUNGAN (dipakai untuk cetak laporan lengkap sekaligus)
+# RINGKASAN GABUNGAN
 # =========================================================
 def ringkasan_lengkap():
     """
